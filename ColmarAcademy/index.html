@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="resources/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+    <link rel="icon" type="image/png" href="resources/images/favicon-32x32.png">
+    <title>Colmar Academy</title>
+    <script
+			  src="https://code.jquery.com/jquery-3.2.1.js"
+			  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+			  crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#login-trigger').click(function(){
+          $(this).next('#login-content').slideToggle();
+          $(this).toggleClass('active');
+
+          if ($(this).hasClass('active')) $(this).find('a').html('&#x25B2;')
+            else $(this).find('a').html('&#x25BC;')
+          })
+      });
+      $(document).ready(function(){
+        $('a').click(function(){
+          $('html, body').animate({
+            scrollTop: $( $(this).attr('href')).offset().top
+          }, 1000);
+          return false;
+        })
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <img id="logo" src="resources/images/ic-logo.svg" alt="Colmar Academy Logo">
+      <span><strong>COLMAR</strong>ACADEMY</span>
+      <nav id="desktop-header">
+        <ul class="desktop-menu">
+          <li><a href="#campus-info">On campus</a></li>
+          <li><a href="#course-info">Online</a></li>
+          <li><a href="#thesis">For companies</a></li>
+          <li id="login">
+            <p id="login-trigger">Sign in
+            </p>
+            <div id="login-content">
+              <form>
+                <fieldset id="inputs">
+                  <input id="username" type="email" name="Email" placeholder="Your email address" required>
+                  <input id="password" type="password" name="Password" placeholder="Password" required>
+                </fieldset>
+                <fieldset id="actions">
+                  <input type="submit" id="submit" value="Log in">
+                </fieldset>
+              </form>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <nav id="mobile-header">
+        <ul>
+          <li><a href="#jumbotron"><img src="resources/images/ic-logo.svg"></a></li>
+          <li><a href="#campus-info"><img src="resources/images/ic-on-campus.svg"></a></li>
+          <li><a href="#course-info"><img src="resources/images/ic-online.svg"></a></li>
+          <li id="login">
+            <p><img id="login-trigger" src="resources/images/ic-login.svg">
+            </p>
+            <div id="login-content">
+              <form>
+                <fieldset id="inputs">
+                  <input id="username" type="email" name="Email" placeholder="Your email address" required>
+                  <input id="password" type="password" name="Password" placeholder="Password" required>
+                </fieldset>
+                <fieldset id="actions">
+                  <input type="submit" id="submit" value="Log in">
+                </fieldset>
+              </form>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section class="inline-flex" id="jumbotron">
+      <div class="block" id="banner-image">
+        <img src="resources/images/banner.jpg" alt="Girl reading a book">
+      </div>
+      <div class="flex-column" id="banner-content">
+        <h1>Learn something<br />new everyday</h1>
+        <h2>Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit.</h2>
+        <button type="button" name="start_here">Start here</button>
+      </div>
+    </section>
+    <section class="inline-flex" id="campus-info">
+      <div class="block desktop-only" id="info-main">
+        <img src="resources/images/information-main.jpg" alt="Male reading a book">
+        <h1>It doesn't hurt to keep practicing</h1>
+        <p class="quote">"Curabitur vitae libero in ipsum porttitor consequat. Aliquam et commodo lectus, nec consequat neque. Sed non accumsan urna. Phasellus sed consequat ex. Etiam eget magna laoreet, efficitur dolor consequat, tristique ligula."</p>
+        <p class="author">Emanuel, Sr Strategist at Hiring.com</p>
+      </div>
+      <div class="block" id="information">
+        <div class="inline-flex info" id="orientation">
+          <div class="block image-container">
+            <img class="desktop-only" src="resources/images/information-orientation.jpg" alt="">
+            <img class="mobile" src="resources/images/information-orientation-mobile.jpg" alt="">
+          </div>
+          <div class="block content">
+            <h2>Orientation date</h2>
+            <p>Tue 10/11 &amp Wed 10/12: 8am-3pm</p>
+            <span><a href="#">Read more</a></span>
+          </div>
+        </div>
+        <div class="inline-flex info" id="campus">
+          <div class="block image-container">
+            <img class="desktop-only" src="resources/images/information-campus.jpg" alt="">
+            <img class="mobile" src="resources/images/information-campus-mobile.jpg" alt="">
+          </div>
+          <div class="block content">
+            <h2>Our campus</h2>
+            <p>Find which campus is close by you</p>
+            <span><a href="#">Read more</a></span>
+          </div>
+        </div>
+        <div class="inline-flex info" id="guest-lecture">
+          <div class="block image-container">
+            <img class="desktop-only" src="resources/images/information-guest-lecture.jpg" alt="">
+            <img class="mobile" src="resources/images/information-guest-lecture-mobile.jpg" alt="">
+          </div>
+          <div class="block content">
+            <h2>Our guest lecture</h2>
+            <p>Join a keynote with Oliver Sack about music in medical treatment</p>
+            <span><a href="#">Read more</a></span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="block" id="course-info">
+      <h1>Start learning</h1>
+      <div class="flex" id="courses">
+        <div class="block flex-item" id="software-engineering">
+          <img class="desktop-only" src="resources/images/course-software.jpg" alt="">
+          <h2>Software engineering</h2>
+          <p>COURSES</p>
+          <p>Web Development, Mobile Development, iOT, APIs</p>
+        </div>
+        <div class="block flex-item" id="computer-art">
+          <img class="desktop-only" src="resources/images/course-computer-art.jpg" alt="">
+          <h2>Computer art</h2>
+          <p>COURSES</p>
+          <p>Imaging &amp Design, Web Design, Motion Graphics &amp Visual Effects, Computer Animation</p>
+        </div>
+        <div class="block flex-item" id="design">
+          <img class="desktop-only" src="resources/images/course-design.jpg" alt="">
+          <h2>Design</h2>
+          <p>COURSES</p>
+          <p>User Experience Design, User Research, Visual Design</p>
+        </div>
+        <div class="block flex-item" id="data">
+          <img class="desktop-only" src="resources/images/course-data.jpg" alt="">
+          <h2>Data</h2>
+          <p>COURSES</p>
+          <p>Data Science, Big Data, SQL, Data Visualization</p>
+        </div>
+        <div class="block flex-item" id="business">
+          <img class="desktop-only" src="resources/images/course-business.jpg" alt="">
+          <h2>Business</h2>
+          <p>COURSES</p>
+          <p>Product Development, Business Development, Startup</p>
+        </div>
+        <div class="block flex-item" id="marketing">
+          <img class="desktop-only" src="resources/images/course-marketing.jpg" alt="">
+          <h2>Marketing</h2>
+          <p>COURSES</p>
+          <p>Analytics, Content Marketing, Moble Marketing</p>
+        </div>
+      </div>
+    </section>
+    <section class="block" id="thesis">
+      <h1>Thesis exhibit</h1>
+      <div class="inline-flex" id="thesis-container">
+        <div class="block" id="thesis-main">
+          <div class="block video-container">
+            <video src="resources/videos/thesis.mp4" controls></video>
+            <h2>Reimagine urban</h2>
+            <p>"Curabitur vitae libero in ipsum porttitor consequat. Aliquam et commodo lectus, nec consequat neque. Sed non accumsan urna. Phasellus sed consequat ex. Etiam eget magna laoreet, efficitur dolor consequat, tristique ligula."</p>
+          </div>
+        </div>
+        <div class="block desktop-only" id="articles">
+          <div class="inline-flex article" id="fisma">
+            <div class="block image-container">
+              <img src="resources/images/thesis-fisma.jpg" alt="">
+            </div>
+            <div class="block content">
+              <h2>Fisma: Design and Prototype</h2>
+              <p>Designer showcase of new prototype product</p>
+            </div>
+          </div>
+          <div class="inline-flex article" id="now-and-then">
+            <div class="block image-container">
+              <img src="resources/images/thesis-now-and-then.jpg" alt="">
+            </div>
+            <div class="block content">
+              <h2>Now and then</h2>
+              <p>Research study about New York</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="inline-flex">
+      <div class="copyright">
+        <span>&copy 2016 Colmar Academy. All rights reserved</span>
+      </div>
+      <div class="terms-privacy desktop-only">
+        <ul>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
